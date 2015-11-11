@@ -59,8 +59,8 @@ alias cpr='cp -r'
 alias rmi='rm -ir'
 alias rmr='rm -r'
 
-# Sphinx
-alias dosphinx='sphinx-apidoc -f -o . .. && make html'
+# Sphinx. Force overwrite (-f), put modules on separate pages (-e)
+alias dosphinx='sphinx-apidoc -e -o . .. && make html'
 
 export PRO='$HOME/.profile'
 

@@ -7,6 +7,17 @@ This is awan1's personal fork of Dotfiler. It contains personal dotfiles.
 It would have been possible to use submodules instead, but this allows for one
 quick git clone.
 
+Other MAC applications I use:
+
+- flux
+- Hyperswitch
+- Spectacle
+- Alfred2
+- Itsycal
+
+Actual docs
+-----------
+
 It was inspired by [Zach Holman's dotfiles](https://github.com/holman/dotfiles) and
 [homesick](https://github.com/technicalpickles/homesick), but was made according KISS priciple.
 
