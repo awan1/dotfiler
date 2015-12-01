@@ -10,6 +10,8 @@ alias t='touch'
 alias p='pwd'
 alias v='vim -p'
 
+alias m='make'
+
 alias py='python'
 alias ipy='ipython'
 alias ip='ipython --pylab'
@@ -62,11 +64,18 @@ alias rmr='rm -r'
 # Sphinx. Force overwrite (-f), put modules on separate pages (-e)
 alias dosphinx='sphinx-apidoc -e -o . .. && make html'
 
-export PRO='$HOME/.profile'
+export PRO="$HOME/.profile"
+# Shortcut to ST3 Python snippets
+export SNIP="$HOME/Library/Application Support/Sublime Text 3/Packages/User/Python"
 
 # Dotfiles path for dot
 if [ -d "$HOME/.dotfiles/bin" ] ; then
   PATH="$HOME/.dotfiles/bin:$PATH"
+fi
+
+# LaTeX
+if [ -d "/usr/local/texlive/2015/bin/x86_64-darwin" ] ; then
+  PATH="/usr/local/texlive/2015/bin/x86_64-darwin:$PATH"
 fi
 
 # Source work aliases if defined

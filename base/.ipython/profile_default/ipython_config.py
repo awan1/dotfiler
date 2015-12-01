@@ -3,4 +3,5 @@ c.InteractiveShellApp.exec_lines = ['print "Running config lines in ~/.ipython/p
                                     '%autoreload 2',
                                     'import sys',
                                     'import os',
-                                    'import pandas as pd']
+                                    'import pandas as pd',
+                                    'import ipdb']
