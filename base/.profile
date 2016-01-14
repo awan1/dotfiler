@@ -38,7 +38,7 @@ function gbdps () { gbd "$@" && gpso :"$@" }
 alias gch='g checkout'
 alias gchb='gch -b'
 function gchbpsuo () { gchb "$@" && gpsuo "$@" }
-alias gd='g diff'
+alias gd='g diff --submodule'
 function gds () { gd "$@" --stat }
 alias gf='g fetch'
 alias gfap='gf --all --prune'
@@ -46,6 +46,7 @@ alias gfo='gf origin'
 alias gm='g merge'
 alias gst='g stash'
 alias gstp='gst pop'
+alias gsub='g submodule'
 alias gr='g reset'
 alias grb='g rebase'
 alias grbi='grb -i'
@@ -57,9 +58,13 @@ alias c='cs'
 function cr () { clear && c "$@" }
 function mk () { mkdir "$@" && c "$@" }
 
+alias cD="c $HOME/Documents"
+
 alias cpr='cp -r'
 alias rmi='rm -ir'
 alias rmr='rm -r'
+
+alias pk='kill -9'
 
 # Sphinx. Force overwrite (-f), put modules on separate pages (-e)
 alias dosphinx='sphinx-apidoc -e -o . .. && make html'
@@ -81,4 +86,11 @@ fi
 # Source work aliases if defined
 if [ -f "$HOME/.aliases_work" ] ; then
   source $HOME/.aliases_work
+fi
+
+if [ -d '/Users/adrianwan/google-cloud-sdk' ] ; then
+  # The next line updates PATH for the Google Cloud SDK.
+  source '/Users/adrianwan/google-cloud-sdk/path.zsh.inc'
+  # The next line enables shell command completion for gcloud.
+  source '/Users/adrianwan/google-cloud-sdk/completion.zsh.inc'
 fi
