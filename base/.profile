@@ -27,6 +27,7 @@ alias gpso='gps origin'
 alias gpsuo='gps -u origin'  # For setting upstream branch on origin
 alias gc='g commit'
 alias gcm='gc -m'
+alias gcl='g clone'
 alias ga='g add'
 alias gaa='g add -A'
 alias gb='g branch'
@@ -50,6 +51,7 @@ alias gsub='g submodule'
 alias gr='g reset'
 alias grb='g rebase'
 alias grbi='grb -i'
+alias grbc='grb --continue' 
 
 function cs () { cd "$@" && l }
 function ca () { cd "$@" && la }
@@ -59,6 +61,7 @@ function cr () { clear && c "$@" }
 function mk () { mkdir "$@" && c "$@" }
 
 alias cD="c $HOME/Documents"
+alias cG="c $HOME/Google\ Drive"
 
 alias cpr='cp -r'
 alias rmi='rm -ir'
@@ -94,3 +97,43 @@ if [ -d '/Users/adrianwan/google-cloud-sdk' ] ; then
   # The next line enables shell command completion for gcloud.
   source '/Users/adrianwan/google-cloud-sdk/completion.zsh.inc'
 fi
+
+# Docker
+alias dk='docker'
+alias dkm='docker-machine'
+alias dkmstart='dkm start default'
+alias dki='dk images'
+alias dkrmi='dk rmi $(dki --filter "dangling=true" -q --no-trunc)'
+alias dkstart='eval $(dkm env default)'
+
+# Cleanup function, from http://stackoverflow.com/a/32723127/2452770
+dkclean(){
+    echo "Removing exited containers"
+    docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
+    echo "Removing unused images"
+    docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
+}
+
+# Kubernetes
+alias kub='kubectl'
+alias kubg='kub get'
+alias kubgp='kubg pods'
+alias kubdel='kub delete'
+alias kubd='kub describe'
+alias kubc='kub create'
+alias kubru='kub rolling-update'
+
+# gcloud 
+function GCswitch() {
+    echo "Switching to cluster $@ and getting credentials"
+    gcloud container clusters get-credentials "$@"
+    gcloud config set container/cluster "$@"
+}
+alias GC='gcloud'
+alias GCcc='GC container clusters'
+
+# Bazel
+PATH="$HOME/bin:$PATH"
+# AppEngine
+export PYTHONPATH="$PYTHONPATH:/usr/local/google_appengine"
+
