@@ -135,5 +135,11 @@ alias GCcc='GC container clusters'
 # Bazel
 PATH="$HOME/bin:$PATH"
 # AppEngine
-export PYTHONPATH="$PYTHONPATH:/usr/local/google_appengine"
+# If PYTHONPATH is length zero, don't want to append :$PYTHONPATH or we get an
+# extra : at the end. Replace spaces in string with nothing.
+APPENGINE_PATH='/usr/local/google_appengine'
+# Removing this because conflicts with protobuf
+# Re-adding because 3.0.0b2.post2 should fix it? 
+export PYTHONPATH=${APPENGINE_PATH}
+# export PYTHONPATH="${APPENGINE_PATH}:$PYTHONPATH"
 
