@@ -1,8 +1,8 @@
-*.pyc
 !/.gitignore
 !/bin
 !/README.md
 !/CHANGELOG.md
+*.pyc
 /work
 .created-links
 base/.ipython/profile_default/history.sqlite
