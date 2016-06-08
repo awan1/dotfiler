@@ -8,6 +8,7 @@ import os
 import pandas as pd
 import ipdb
 import logging
+import matplotlib.pyplot as plt
 
 def _set_log_level(level):
     """
