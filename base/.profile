@@ -1,6 +1,25 @@
-alias l='ls'
+## Replace ls with GNU ls + color
+alias ls='gls --color=auto'
 alias la='ls -a'
 alias ll='ls -lah'
+
+## Default ls: don't want to see .pyc files
+function l () {
+    ## Set lsdir to the current directory if no other directory was specified
+    lsdir=${1:-.}
+    echo $lsdir
+    ls $lsdir --ignore="*.pyc"
+    ## Count the number of .pyc files in lsdir
+    OMIT=$(gfind ${lsdir} -maxdepth 1 -iname "*.pyc" | wc -l | sed -e 's/^[ \t]*//')
+    if [ $OMIT -gt 0 ] ; then
+        echo "Omitted" $OMIT  ".pyc files"
+    fi
+}
+alias l=l
+
+## ls colors
+LS_COLORS=$LS_COLORS:'*.pyc=90;*.swp=90'
+export LS_COLORS
 
 alias clr='clear'
 alias duh='du -h'
@@ -14,18 +33,18 @@ alias m='make'
 
 alias py='python'
 alias ipy='ipython'
-alias ip='ipython --matplotlib'
+alias ip='ipython' # --matplotlib'
 alias nb='jupyter notebook'
+alias venv='virtualenv'
+alias dea='deactivate'
 
 ## Git
 alias g='git'
 alias gs='g status -sb'
 alias gl='g log --oneline --decorate'
-alias glb="gl --branches"
-alias glbg="glb --graph"
-alias gla="g log --pretty=format:'%C(auto)%h%d %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short"
-alias glab="gla --branches"
-alias glabg="glab --graph"
+alias glb="gl --branches --graph"
+alias gla="g log --pretty=format:'%C(auto)%h%d %s %Cgreen(%ad %C(bold blue)%an)%Creset' --abbrev-commit --date=short"
+alias glab="gla --branches --graph"
 alias gpl='g pull --ff-only'
 alias gps='g push'
 alias gpso='gps origin'
@@ -60,7 +79,7 @@ alias gsubu='gsub update'
 alias gr='g reset'
 alias grb='g rebase'
 alias grbi='grb -i'
-alias grbc='grb --continue' 
+alias grbc='grb --continue'
 
 function cs () { cd "$@" && l }
 function ca () { cd "$@" && la }
@@ -123,6 +142,14 @@ dkclean(){
     docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
 }
 
+## Restart docker-machine, for all problems (e.g. invalid registry)
+dkmrestart(){
+    dkm restart default
+    echo "Doing the dkm env default command"
+    dkstart
+}
+alias dkmregen='dkm regenerate-certs default --force'
+
 ## Kubernetes
 alias kub='kubectl'
 alias kubg='kub get'
@@ -131,8 +158,9 @@ alias kubdel='kub delete'
 alias kubd='kub describe'
 alias kubc='kub create'
 alias kubru='kub rolling-update'
+alias kubl='kub logs -f'
 
-## gcloud 
+## gcloud
 function GCswitch() {
     echo "Switching to cluster $@ and getting credentials"
     gcloud container clusters get-credentials "$@"
@@ -148,7 +176,9 @@ PATH="$HOME/bin:$PATH"
 # extra : at the end. Replace spaces in string with nothing.
 APPENGINE_PATH='/usr/local/google_appengine'
 ## Removing this because conflicts with protobuf
-## Re-adding because 3.0.0b2.post2 should fix it? 
+## Re-adding because 3.0.0b2.post2 should fix it?
 export PYTHONPATH=${APPENGINE_PATH}
 ## export PYTHONPATH="${APPENGINE_PATH}:$PYTHONPATH"
+## Go
+export GOPATH=$HOME
 

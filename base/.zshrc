@@ -114,3 +114,5 @@ bindkey '^R' history-incremental-search-backward
 bindkey 'OA' history-beginning-search-backward
 bindkey 'OB' history-beginning-search-forward
 setopt extended_glob
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

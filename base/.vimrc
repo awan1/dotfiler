@@ -29,3 +29,8 @@ set backspace=indent,eol,start
 set tabpagemax=100
 
 command Rmfile :call delete(@%) | q
+
+"Automatically remove whitespace from all files on save
+"http://vim.wikia.com/wiki/Remove_unwanted_spaces#Automatically_removing_all_trailing_whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
