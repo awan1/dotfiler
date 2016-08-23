@@ -3,27 +3,49 @@ alias ls='gls --color=auto'
 alias la='ls -a'
 alias ll='ls -lah'
 
-## Default ls: don't want to see .pyc files
+## Other GNU replacements
+alias find='gfind'
+alias f='find'
+
+## Default ls: don't want to see .pyc files.
+## Demonstrating ability to add arbitrary file globs
+omit_globs=('*.pyc' 'xxx')
+## Build the ignore args for the ls command
+ignore_args=''
+for omit_glob in ${omit_globs}; do
+    ignore_args="$ignore_args --ignore=\"${omit_glob}\""
+done
 function l () {
-    ## Set lsdir to the current directory if no other directory was specified
-    lsdir=${1:-.}
-    echo $lsdir
-    ls $lsdir --ignore="*.pyc"
-    ## Count the number of .pyc files in lsdir
-    OMIT=$(gfind ${lsdir} -maxdepth 1 -iname "*.pyc" | wc -l | sed -e 's/^[ \t]*//')
-    if [ $OMIT -gt 0 ] ; then
-        echo "Omitted" $OMIT  ".pyc files"
-    fi
+    ## Set lsarg to the current directory if there were no other arguments.
+    ## Allows ls with no commands to work as expected.
+    lsarg=${@:-.}
+    ## Build the command and run it, so that ignore_args gets properly
+    ## parsed as the flags. This causes the ls output.
+    lscmd="ls $lsarg ${ignore_args}"
+    eval $lscmd
+    ## Count the number of files to omit
+    for omit_glob in ${omit_globs}; do
+        ## Need to use the eval string again because lsarg could be a glob,
+        ## and it's now a string because we used the noglob setting
+        find_cmd="find ${lsarg} -maxdepth 1 -iname \"${omit_glob}\""
+        ## Counts the number of excluded files; the sed command formats the
+        ## output of wc by stripping leading spaces and tabs
+        omit_count=$(eval $find_cmd | wc -l | sed -e 's/^[ \t]*//')
+        if [ $omit_count -gt 0 ] ; then
+            echo "Omitted ${omit_count} ${omit_glob} files"
+        fi
+    done
 }
-alias l=l
+## Need noglob because we want to pass globs to the function without the shell
+## expanding them first
+alias l="noglob l"
 
 ## ls colors
-LS_COLORS=$LS_COLORS:'*.pyc=90;*.swp=90'
+LS_COLORS="*.pyc=90:*.swp=90:$LS_COLORS"
 export LS_COLORS
 
 alias clr='clear'
 alias duh='du -h'
-alias f='find'
 alias md='mkdir'
 alias t='touch'
 alias p='pwd'
