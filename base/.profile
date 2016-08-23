@@ -3,6 +3,10 @@ alias ls='gls --color=auto'
 alias la='ls -a'
 alias ll='ls -lah'
 
+## ls colors
+LS_COLORS="*.pyc=90:*.swp=90:$LS_COLORS"
+export LS_COLORS
+
 ## Other GNU replacements
 alias find='gfind'
 alias f='find'
@@ -31,18 +35,16 @@ function l () {
         ## Counts the number of excluded files; the sed command formats the
         ## output of wc by stripping leading spaces and tabs
         omit_count=$(eval $find_cmd | wc -l | sed -e 's/^[ \t]*//')
+        echo_color='\033[0;90m'  # Looks like dark blue
         if [ $omit_count -gt 0 ] ; then
-            echo "Omitted ${omit_count} ${omit_glob} files"
+            ## Print output with color
+            echo -e "\t${echo_color}(Omitted ${omit_count} ${omit_glob} files)"
         fi
     done
 }
 ## Need noglob because we want to pass globs to the function without the shell
 ## expanding them first
 alias l="noglob l"
-
-## ls colors
-LS_COLORS="*.pyc=90:*.swp=90:$LS_COLORS"
-export LS_COLORS
 
 alias clr='clear'
 alias duh='du -h'
@@ -203,4 +205,9 @@ export PYTHONPATH=${APPENGINE_PATH}
 ## export PYTHONPATH="${APPENGINE_PATH}:$PYTHONPATH"
 ## Go
 export GOPATH=$HOME
+
+alias j="jekyll"
+
+## Tab size
+tabs -4
 
