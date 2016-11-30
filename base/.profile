@@ -27,6 +27,8 @@ function l () {
     ## parsed as the flags. This causes the ls output.
     lscmd="ls $lsarg ${ignore_args}"
     eval $lscmd
+    ## Exit if ls failed
+    if [ $? -ne 0 ] ; then return; fi
     ## Count the number of files to omit
     for omit_glob in ${omit_globs}; do
         ## Need to use the eval string again because lsarg could be a glob,
@@ -48,6 +50,7 @@ alias l="noglob l"
 
 alias clr='clear'
 alias duh='du -h'
+alias duhs='duh -s'  # equiv. to --depth=0
 alias md='mkdir'
 alias t='touch'
 alias p='pwd'
@@ -55,9 +58,8 @@ alias v='vim -p'
 
 alias m='make'
 
-alias py='python'
-alias ipy='ipython'
-alias ip='ipython' # --matplotlib'
+alias py='python -B'
+alias ip='ipython'
 alias nb='jupyter notebook'
 alias venv='virtualenv'
 alias dea='deactivate'
@@ -71,6 +73,7 @@ alias gla="g log --pretty=format:'%C(auto)%h%d %s %Cgreen(%ad %C(bold blue)%an)%
 alias glab="gla --branches --graph"
 alias gpl='g pull --ff-only'
 alias gps='g push'
+alias gpsf='g push --force'
 alias gpso='gps origin'
 alias gpsuo='gps -u origin'  # For setting upstream branch on origin
 alias gc='g commit'
@@ -204,10 +207,16 @@ APPENGINE_PATH='/usr/local/google_appengine'
 export PYTHONPATH=${APPENGINE_PATH}
 ## export PYTHONPATH="${APPENGINE_PATH}:$PYTHONPATH"
 ## Go
-export GOPATH=$HOME
+export GOPATH=$HOME/Documents/golang
 
 alias j="jekyll"
 
 ## Tab size
 tabs -4
 
+## iTerm2 shell integration
+source ~/.iterm2_shell_integration.`basename $SHELL`
+
+## Java
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=/opt/apache-maven-3.3.9/bin:$PATH
