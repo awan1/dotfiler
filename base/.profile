@@ -115,7 +115,7 @@ alias c='cs'
 function cr () { clear && c "$@" }
 function mk () { mkdir "$@" && c "$@" }
 
-alias cD="c $HOME/Documents"
+alias cD="c $HOME/Documents/nest"
 alias cG="c $HOME/Google\ Drive"
 
 alias cpr='cp -r'
