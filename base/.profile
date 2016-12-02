@@ -220,3 +220,7 @@ source ~/.iterm2_shell_integration.`basename $SHELL`
 ## Java
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=/opt/apache-maven-3.3.9/bin:$PATH
+
+## User-installed binaries take precedence
+export PATH=/usr/local/bin:$PATH
+
