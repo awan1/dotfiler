@@ -224,3 +224,8 @@ export PATH=/opt/apache-maven-3.3.9/bin:$PATH
 ## User-installed binaries take precedence
 export PATH=/usr/local/bin:$PATH
 
+## virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Documents
+source /usr/local/bin/virtualenvwrapper.sh
+
