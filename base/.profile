@@ -78,7 +78,7 @@ alias gpso='gps origin'
 alias gpsuo='gps -u origin'  # For setting upstream branch on origin
 alias gc='g commit'
 alias gcm='gc -m'
-alias gcl='g clone'
+alias gcl='g clone --recursive'  # For getting submodules
 alias ga='g add'
 alias gaa='g add -A'
 alias gau='g add -u'  # Only add tracked files
@@ -229,3 +229,5 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Documents
 source /usr/local/bin/virtualenvwrapper.sh
 
+## pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
