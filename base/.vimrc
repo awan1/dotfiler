@@ -2,7 +2,7 @@ map  <c-w>
 set t_Co=256
 syntax enable
 
-set tabstop=8 softtabstop=4 expandtab shiftwidth=4 smarttab
+set tabstop=8 softtabstop=2 expandtab shiftwidth=2 smarttab
 set autoindent
 
 set laststatus=2
@@ -34,3 +34,12 @@ command Rmfile :call delete(@%) | q
 "http://vim.wikia.com/wiki/Remove_unwanted_spaces#Automatically_removing_all_trailing_whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
+"Enable plugins
+set nocp
+filetype plugin on
+
+"Remap ctrl-{h/j/k/l} to pane switch
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l

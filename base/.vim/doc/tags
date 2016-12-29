@@ -1,0 +1,13 @@
+:MPN	mpage.txt	/*:MPN*
+:MPP	mpage.txt	/*:MPP*
+:MPage	mpage.txt	/*:MPage*
+:mpage-pagedown	mpage.txt	/*:mpage-pagedown*
+:mpage-pageup	mpage.txt	/*:mpage-pageup*
+MultiPager	mpage.txt	/*MultiPager*
+g:mpage_autonxtwin	mpage.txt	/*g:mpage_autonxtwin*
+mpage	mpage.txt	/*mpage*
+mpage-contents	mpage.txt	/*mpage-contents*
+mpage-copyright	mpage.txt	/*mpage-copyright*
+mpage-history	mpage.txt	/*mpage-history*
+mpage-manual	mpage.txt	/*mpage-manual*
+mpage.txt	mpage.txt	/*mpage.txt*
