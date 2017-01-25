@@ -59,6 +59,7 @@ alias v='vim -p'
 alias m='make'
 
 alias py='python -B'
+alias pym='py -m'
 alias ip='ipython'
 alias nb='jupyter notebook'
 alias venv='virtualenv'
