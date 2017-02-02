@@ -108,6 +108,7 @@ alias gr='g reset'
 alias grb='g rebase'
 alias grbi='grb -i'
 alias grbc='grb --continue'
+alias gt='g tag'
 # Bundles
 alias gacs='gau && gc && gps'
 
