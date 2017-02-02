@@ -109,6 +109,8 @@ alias grb='g rebase'
 alias grbi='grb -i'
 alias grbc='grb --continue'
 alias gt='g tag'
+# Amend commit date to now. Useful after rebase
+alias gcanow='gc --amend --date="now"'
 # Bundles
 alias gacs='gau && gc && gps'
 
