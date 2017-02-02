@@ -108,6 +108,8 @@ alias gr='g reset'
 alias grb='g rebase'
 alias grbi='grb -i'
 alias grbc='grb --continue'
+# Bundles
+alias gacs='gau && gc && gps'
 
 function cs () { cd "$@" && l }
 function ca () { cd "$@" && la }
