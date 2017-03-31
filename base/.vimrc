@@ -1,4 +1,5 @@
 " Adrian Wan
+let mapleader=","  " set mapleader
 
 " Sources {{{
 " * https://dougblack.io/words/a-good-vimrc.html
@@ -22,13 +23,6 @@ set lazyredraw      " redraw only when need to
 set showmatch       " highlight matching [({})]
 " }}}
 
-" Search {{{
-set incsearch           " search as characters are entered
-set hlsearch            " highlight matches
-" turn off search highlight
-nnoremap <leader><space> :nohlsearch<CR>
-" }}}
-
 " Folds {{{
 set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
@@ -36,6 +30,13 @@ set foldnestmax=10      " 10 nested folds, max
 " use space to open folds
 nnoremap <space> za
 set foldmethod=indent   " fold based on indent level
+" }}}
+
+" Search {{{
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+" turn off search highlight using leader-c
+nnoremap <leader>c :nohlsearch<CR>
 " }}}
 
 " Status line {{{
@@ -63,7 +64,6 @@ filetype plugin on
 " }}}
 
 " Shortcuts {{{
-let mapleader=","  " set mapleader
 " Movement {{{
 " Make Y like D: yank to end of line
 nnoremap Y y$
