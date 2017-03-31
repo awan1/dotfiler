@@ -7,4 +7,4 @@
 .created-links
 base/.ipython/profile_default/history.sqlite
 base/.ipython/profile_default/startup
-
+base/.vim/.netrwhist

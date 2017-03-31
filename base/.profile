@@ -112,7 +112,10 @@ alias gt='g tag'
 # Amend commit date to now. Useful after rebase
 alias gcanow='gc --amend --date="now"'
 # Bundles
-alias gacs='gau && gc && gps'
+alias gac='gau && gc'
+alias gacs='gac && gps'
+alias gaac='gaa && gc'
+alias gaacs='gaac && gps'
 
 function cs () { cd "$@" && l }
 function ca () { cd "$@" && la }
