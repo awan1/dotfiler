@@ -6,7 +6,7 @@ let mapleader=","  " set mapleader
 " }}}
 "
 " Spacing {{{
-set tabstop=8       " number of visual spaces per tab
+set tabstop=4       " number of visual spaces per tab
 set softtabstop=2   " number of spaces in tab while editing
 set expandtab       " turn tabs into spaces
 set shiftwidth=2    " number of spaces to shift by when tabbing?
@@ -16,7 +16,7 @@ set autoindent      " align new lines
 
 " UI {{{
 set number          " show line numbers
-set showcmd         " show last command
+" set showcmd         " show last command
 set cursorline      " highlight current line
 set wildmenu        " visual autocomplete for command menu
 set lazyredraw      " redraw only when need to
@@ -68,8 +68,8 @@ filetype plugin on
 " Make Y like D: yank to end of line
 nnoremap Y y$
 " Move by visual line
-nnoremap j gj
-nnoremap k gk
+" nnoremap j gj
+" nnoremap k gk
 "Remap ctrl-{h/j/k/l} to pane switch
 map  <c-w>
 map <C-j> <C-W>j

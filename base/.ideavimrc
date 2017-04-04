@@ -1,2 +1,38 @@
 " Import bindings from vimrc
-source ~/.vimrc
+" Actually, this doesn't work, because I think a bunch of shortcuts don't
+" translate over nicely.
+" source ~/.vimrc
+let mapleader=","
+
+" Search {{{
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+" turn off search highlight using leader-c
+nnoremap <leader>c :nohlsearch<CR>
+" }}}
+
+" Shortcuts {{{
+" Movement {{{
+" Make Y like D: yank to end of line
+nnoremap Y y$
+" Move by visual line
+" nnoremap j gj
+" nnoremap k gk
+"Remap ctrl-{h/j/k/l} to pane switch
+map  <c-w>
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+" }}}
+" }}}
+"
+" Misc {{{
+"Automatically remove whitespace from all files on save
+"http://vim.wikia.com/wiki/Remove_unwanted_spaces#Automatically_removing_all_trailing_whitespace
+"autocmd BufWritePre * :%s/\s\+$//e
+" }}}
+
+""" Readability for this file
+set modelines=1   " Apply the final line of this file as settings for this file only
+" vim:foldmethod=marker:foldlevel=0
