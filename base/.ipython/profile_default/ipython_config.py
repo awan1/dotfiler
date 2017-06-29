@@ -5,6 +5,7 @@ print("Running config lines in ~/.ipython/profile_default/ipython_config.py")
 %autoreload 2
 import sys
 import os
+import numpy as np
 import pandas as pd
 import ipdb
 import logging

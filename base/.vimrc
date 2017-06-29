@@ -6,11 +6,10 @@ let mapleader=","  " set mapleader
 " }}}
 "
 " Spacing {{{
-set tabstop=4       " number of visual spaces per tab
-set softtabstop=2   " number of spaces in tab while editing
 set expandtab       " turn tabs into spaces
+set tabstop=2       " number of visual spaces per tab
+set softtabstop=2   " number of spaces in tab while editing
 set shiftwidth=2    " number of spaces to shift by when tabbing?
-set smarttab        " not sure...
 set autoindent      " align new lines
 " }}}
 
@@ -60,7 +59,16 @@ set statusline+=\ %P    "percent through file
 
 " Enable plugins {{{
 set nocp
-filetype plugin on
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+" Set the tab width for all filetypes, to stop `filetype indent on` from
+" overriding
+let s:tabwidth=2
+au Filetype * let &l:tabstop = s:tabwidth
+au Filetype * let &l:shiftwidth = s:tabwidth
+au Filetype * let &l:softtabstop = s:tabwidth
 " }}}
 
 " Shortcuts {{{
