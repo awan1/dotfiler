@@ -151,8 +151,8 @@ if [ -d "/usr/local/texlive/2015/bin/x86_64-darwin" ] ; then
 fi
 
 ## Source work aliases if defined
-if [ -f "$HOME/.aliases_work" ] ; then
-  source $HOME/.aliases_work
+if [ -f "$HOME/.profile_work" ] ; then
+  source $HOME/.profile_work
 fi
 
 if [ -d '/Users/adrianwan/google-cloud-sdk' ] ; then
@@ -240,3 +240,9 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 ## pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/adrianwan/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/adrianwan/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/adrianwan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/adrianwan/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
