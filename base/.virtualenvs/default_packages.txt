@@ -1,0 +1,4 @@
+numpy
+ipdb
+ipython
+pandas
