@@ -116,9 +116,6 @@ alias gac='gau && gc'
 alias gacs='gac && gps'
 alias gaac='gaa && gc'
 alias gaacs='gaac && gps'
-# Remove local branches that don't have a remote
-# from https://stackoverflow.com/a/38404202/2452770
-alias gprune="git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d"
 
 function cs () { cd "$@" && l }
 function ca () { cd "$@" && la }
