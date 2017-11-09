@@ -113,6 +113,7 @@ alias gt='g tag'
 alias gcanow='gc --amend --date="now"'
 # Bundles
 alias gac='gau && gc'
+alias gacm='gau && gcm'
 alias gacs='gac && gps'
 alias gaac='gaa && gc'
 alias gaacs='gaac && gps'
