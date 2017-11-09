@@ -151,8 +151,8 @@ if [ -d "/usr/local/texlive/2015/bin/x86_64-darwin" ] ; then
 fi
 
 ## Source work aliases if defined
-if [ -f "$HOME/.profile_work" ] ; then
-  source $HOME/.profile_work
+if [ -f "$HOME/.aliases_work" ] ; then
+  source $HOME/.aliases_work
 fi
 
 if [ -d '/Users/adrianwan/google-cloud-sdk' ] ; then
