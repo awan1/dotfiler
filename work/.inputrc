@@ -1,0 +1,7 @@
+# Makes up/down do prefix-matching
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+# Show ambiguous options more quickly on TAB
+set show-all-if-ambiguous on
+
