@@ -76,8 +76,11 @@ nnoremap <leader>c :nohlsearch<CR>
 " }}}
 
 " Status line {{{
-" Install powerline from https://gist.github.com/leosuncin/25bad6ae66c5d513b986
-set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+" Prerequisite for these lines: `pip install powerline-status`
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
 set laststatus=2
 set showtabline=2 " Always display the tabline, even if there is only one tab
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
@@ -107,7 +110,6 @@ set statusline+=\ %P    "percent through file
 " Hide encoding in powerline
 let g:airline_section_y=''
 let g:webdevicons_enable_airline_statusline_fileformat_symbols=0
-set statusline=test
 " }}}
 
 " Enable plugins {{{
