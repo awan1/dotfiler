@@ -138,9 +138,7 @@ export EDITOR="$VISUAL"
 # 20180606.173310
 # Copied from .bashrc
 eval "$("${HOME}/bin/ssh_agent.sh")"
-if [[ -r $HOME/verb/tools/envsetup.sh ]]; then
+if [[ -r $HOME/verb/tools/envsetup-zsh.sh ]]; then
     # /bin/bash source $HOME/verb/tools/envsetup.sh
-    autoload bashcompinit
-    bashcompinit
-    source $HOME/verb/tools/envsetup.sh
+    source $HOME/verb/tools/envsetup-zsh.sh
 fi

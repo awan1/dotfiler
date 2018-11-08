@@ -242,8 +242,7 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""' " Speedup with ag
 " }}}
 
 " AutoFormat {{{
-" Commenting out for now, auto-format seems to not do exactly what I want
-" (e.g. indents namespace).
+let g:formatterpath = ['/home/adrianwan/verb/usr/bin/clang-format-verb']
 " au BufWrite * :Autoformat
 " }}}
 
