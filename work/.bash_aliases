@@ -8,6 +8,7 @@ function cl () { cd "$@"; ll; }
 
 # Directories
 alias cv="c ~/verb"
+alias cve="c ~/verb/export/robot_logs"
 alias cvv="c ~/verb/verb"
 
 # Programs
@@ -25,7 +26,7 @@ alias sagu="sag update"
 
 # Bazel
 alias b="bazel"
-alias bb="b build"
+alias bb="b build --config=local"  # For building on gLinux
 alias bt="b test"
 alias bc="b clean"
 
@@ -106,3 +107,9 @@ alias gacm='gau && gcm'
 alias gacs='gac && gps'
 alias gaac='gaa && gc'
 alias gaacs='gaac && gps'
+
+# Docker
+alias d='docker'
+alias di='d images'
+# syssw docker script
+alias swd='~/verb/tools/dev/syssw_docker/syssw_docker.sh'
