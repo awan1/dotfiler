@@ -1,6 +1,2 @@
-/*
 *.pyc
-!/.gitignore
-!/bin
-!/README.md
-!/CHANGELOG.md
+.created-links
