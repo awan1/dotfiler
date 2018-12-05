@@ -2,11 +2,14 @@ Setting up new Linux env:
 
 - Clone gnome-terminal-colors for zenburn colors:
     git clone git@github.com:gnumoksha/gnome-terminal-colors.git
+  then run the `install.sh` script.
 - Install zsh:
     sudo apt-get install zsh
 - Install oh-my-zsh. Do this first since dotfiles repo will overwrite .zsh
   stuff:
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  (If it complains that "user does not exist in /etc/passwd", ignore it - we'll
+  set the default command later which will automatically run zsh)
 - Clone dotfiles repo:
     git clone git@github.com:awan1/dotfiler.git ~/.dotfiles
   then switch to correct branch, add `~/.dotfiles/bin` to path, and run
@@ -21,9 +24,8 @@ Setting up new Linux env:
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   then `tmux source ~/.tmux.conf` to start tpm,
   then prefix-I(nstall) to install the plugins specified in .tmux.conf.
-- (optional) Install powerline fonts:
-  `git clone https://github.com/powerline/fonts`
-- Install Hack font: https://sourcefoundry.org/hack/
+- Install Hack font: https://sourcefoundry.org/hack/. Then set Terminal to use
+  it.
 - Vim stuff:
   - Install Vundle:
       git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
