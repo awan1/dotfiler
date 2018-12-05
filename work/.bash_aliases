@@ -30,6 +30,11 @@ alias bb="b build --config=local"  # For building on gLinux
 alias bt="b test"
 alias bc="b clean"
 
+# Dazel
+alias db="dazel build '...:*'"
+alias dt="dazel test '...:*'"
+alias dbt="db && dt"
+
 # clang-format
 alias cft="${VERB_HOME}/shared/build_rules/clang_format_test/clang_format_test.sh"
 # alias cfvi="${VERB_HOME}/usr/bin/clang-format-verb"
