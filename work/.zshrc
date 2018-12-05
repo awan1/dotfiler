@@ -142,3 +142,6 @@ if [[ -r $HOME/verb/tools/envsetup-zsh.sh ]]; then
     # /bin/bash source $HOME/verb/tools/envsetup.sh
     source $HOME/verb/tools/envsetup-zsh.sh
 fi
+
+export VERB_HOME="${HOME}/verb"
+export PATH=$PATH:${VERB_HOME}/usr/bin
