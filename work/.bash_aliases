@@ -89,6 +89,8 @@ alias gchb='gch -b'
 function gchbpsuo () { gchb "$@"; gpsuo "$@"; }
 alias gd='g diff --submodule'
 function gds () { gd "$@" --stat; }
+alias gdh='gd HEAD~1'
+alias gdsh='gds HEAD~1'
 alias gf='g fetch'
 alias gfap='gf --all --prune'
 alias gfo='gf origin'
@@ -119,3 +121,6 @@ alias d='docker'
 alias di='d images'
 # syssw docker script
 alias swd='~/verb/tools/dev/syssw_docker/syssw_docker.sh'
+
+# Other work
+alias gpsg='gps gerrit HEAD:refs/for/master'
