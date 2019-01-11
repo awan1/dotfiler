@@ -29,6 +29,7 @@ alias b="bazel"
 alias bb="b build --config=local"  # For building on gLinux
 alias bt="b test"
 alias bc="b clean"
+alias bbt="bb '...:*' && bt '...:*'"
 
 # Dazel
 alias db="dazel build '...:*'"

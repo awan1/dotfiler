@@ -205,6 +205,12 @@ nnoremap  :call ToggleComment()<CR>
 vnoremap  :call ToggleComment()<CR>
 "}}}
 
+" Tab-complete {{{
+" Make tab-complete in visual-mode
+:set wildmode=list:longest,full
+" Could look at completeopt for insert-mode completion
+" }}}
+
 " Misc {{{
 " Delete a given file
 command! Rmfile :call delete(@%) | q
