@@ -20,10 +20,17 @@ Plugin 'ervandew/supertab'  " To make YCM and UltiSnips work together
 Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'rhysd/vim-clang-format'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+" }}}
+
+" Enable Pathogen {{{
+set nocp
+execute pathogen#infect()
+execute pathogen#helptags()
 " }}}
 
 " Do these early {{{
@@ -110,12 +117,6 @@ set statusline+=\ %P    "percent through file
 " Hide encoding in powerline
 let g:airline_section_y=''
 let g:webdevicons_enable_airline_statusline_fileformat_symbols=0
-" }}}
-
-" Enable plugins {{{
-set nocp
-execute pathogen#infect()
-execute pathogen#helptags()
 " }}}
 
 " Shortcuts {{{
@@ -211,6 +212,11 @@ vnoremap  :call ToggleComment()<CR>
 " Could look at completeopt for insert-mode completion
 " }}}
 
+" Header/Source switching {{{
+" From https://vim.fandom.com/wiki/Easily_switch_between_source_and_header_file
+nnoremap <leader>s :e %:p:s,.h$,.X123X,:s,.cc$,.h,:s,.X123X$,.cc,<CR>
+" }}}
+
 " Misc {{{
 " Delete a given file
 command! Rmfile :call delete(@%) | q
@@ -252,6 +258,13 @@ let g:formatterpath = ['/home/adrianwan/verb/usr/bin/clang-format-verb']
 " au BufWrite * :Autoformat
 " }}}
 
+" ClangFormat {{{
+let g:clang_format#code_style = "google"
+
+" Run ClangFormat automatically for cpp files
+autocmd FileType cpp ClangFormatAutoEnable
+" }}}
+
 " Other {{{
 " toggle gundo - super-undo, graphical interface to tree
 nnoremap <leader>u :GundoToggle<CR>
@@ -268,9 +281,8 @@ au Filetype * let &l:tabstop = s:tabwidth
 au Filetype * let &l:shiftwidth = s:tabwidth
 au Filetype * let &l:softtabstop = s:tabwidth
 
-
-"Automatically remove whitespace from all files on save
-"http://vim.wikia.com/wiki/Remove_unwanted_spaces#Automatically_removing_all_trailing_whitespace
+" Automatically remove whitespace from all files on save
+" http://vim.wikia.com/wiki/Remove_unwanted_spaces#Automatically_removing_all_trailing_whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 " }}}
 

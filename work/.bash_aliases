@@ -26,10 +26,17 @@ alias sagu="sag update"
 
 # Bazel
 alias b="bazel"
-alias bb="b build --config=local"  # For building on gLinux
+alias bb="b build --config=tidy"  # config=tidy for clang-tidy
 alias bt="b test"
 alias bc="b clean"
 alias bbt="bb '...:*' && bt '...:*'"
+
+# Secondary bazel, e.g. for long builds
+alias b2="${HOME}/verb2/usr/bin/bazel"
+alias b2b="b2 build --config=tidy"  # config=tidy for clang-tidy
+alias b2t="b2 test"
+alias b2c="b2 clean"
+alias b2bt="b2b '...:*' && b2t '...:*'"
 
 # Dazel
 alias db="dazel build '...:*'"
@@ -125,3 +132,4 @@ alias swd='~/verb/tools/dev/syssw_docker/syssw_docker.sh'
 
 # Other work
 alias gpsg='gps gerrit HEAD:refs/for/master'
+alias gpsd='gps gerrit HEAD:refs/drafts/master'
