@@ -34,6 +34,9 @@ execute pathogen#helptags()
 " }}}
 
 " Do these early {{{
+set t_Co=256  " for better color emulation
+set background=dark " for color of comments
+colorscheme zenburn
 syntax on
 syntax enable
 "}}}
@@ -53,10 +56,6 @@ set cursorline      " highlight current line
 set wildmenu        " visual autocomplete for command menu
 set lazyredraw      " redraw only when need to
 set showmatch       " highlight matching [({})]
-
-set t_Co=256  " for better color emulation
-set background=dark " for color of comments
-colors zenburn
 
 " Provide line length ruler and hard wrap
 set colorcolumn=81
@@ -84,9 +83,9 @@ nnoremap <leader>c :nohlsearch<CR>
 
 " Status line {{{
 " Prerequisite for these lines: `pip install powerline-status`
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 set laststatus=2
 set showtabline=2 " Always display the tabline, even if there is only one tab
@@ -284,6 +283,7 @@ au Filetype * let &l:softtabstop = s:tabwidth
 " Automatically remove whitespace from all files on save
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces#Automatically_removing_all_trailing_whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd FileType cpp ClangFormatAutoEnable
 " }}}
 
 " Misc {{{
