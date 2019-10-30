@@ -5,7 +5,7 @@ let mapleader=","  " set mapleader
 " * https://dougblack.io/words/a-good-vimrc.html
 " }}}
 
-" Vundle {{{
+" Vundle / Plugins {{{
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -227,6 +227,9 @@ command! Src :source $MYVIMRC
 
 " Plugin config {{{
 " YCM & UltiSnips {{{
+" Close preview pane after leaving insert mode
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
 " From https://stackoverflow.com/a/22253548/2452770
 
 " make YCM compatible with UltiSnips (using supertab)
@@ -253,10 +256,9 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""' " Speedup with ag
 " }}}
 
 " AutoFormat {{{
-"let g:formatterpath = ['${HOME}/.local/lib/python2.7/site-packages
 let g:formatters_python = ['yapf']
 let g:formatter_yapf_style = 'google'
-au BufWrite *.py :Autoformat
+autocmd BufWrite *.py :Autoformat
 " }}}
 
 " ClangFormat {{{
