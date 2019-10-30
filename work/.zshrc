@@ -144,4 +144,8 @@ if [[ -r $HOME/verb/tools/envsetup-zsh.sh ]]; then
 fi
 
 export VERB_HOME="${HOME}/verb"
-export PATH=$PATH:${VERB_HOME}/usr/bin
+export PATH=$PATH:${VERB_HOME}/usr/bin:/usr/local/bin
+
+# Virtualenvwrapper
+export WORKON_HOME="${HOME}/virtualenvs"
+source ${HOME}/.local/bin/virtualenvwrapper.sh

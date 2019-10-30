@@ -253,8 +253,10 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""' " Speedup with ag
 " }}}
 
 " AutoFormat {{{
-let g:formatterpath = ['/home/adrianwan/verb/usr/bin/clang-format-verb']
-" au BufWrite * :Autoformat
+"let g:formatterpath = ['${HOME}/.local/lib/python2.7/site-packages
+let g:formatters_python = ['yapf']
+let g:formatter_yapf_style = 'google'
+au BufWrite *.py :Autoformat
 " }}}
 
 " ClangFormat {{{
