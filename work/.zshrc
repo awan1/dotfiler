@@ -149,3 +149,5 @@ export PATH=$PATH:${VERB_HOME}/usr/bin:/usr/local/bin
 # Virtualenvwrapper
 export WORKON_HOME="${HOME}/virtualenvs"
 source ${HOME}/.local/bin/virtualenvwrapper.sh
+# Imatest
+alias srcimatest='export LD_LIBRARY_PATH=/usr/local/Imatest/v5.2.0/IT/bin:/usr/local/Imatest/v5.2.0/IT/libs/library/cpp:/usr/local/MATLAB/MATLAB_Runtime/v96/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v96/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v96/sys/os/glnxa64; export MCR_CACHE_ROOT=/var/lib/imatest/mcr_cache; export MCR_CACHE_SIZE=900000000'

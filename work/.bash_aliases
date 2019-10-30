@@ -123,6 +123,9 @@ alias gacm='gau && gcm'
 alias gacs='gac && gps'
 alias gaac='gaa && gc'
 alias gaacs='gaac && gps'
+# Compound git commands
+# Make the given branch point to current commit and check the branch out
+function gbf () { gb -f "$@" && gch "$@" }
 
 # Docker
 alias d='docker'
