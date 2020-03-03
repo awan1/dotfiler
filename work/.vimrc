@@ -263,8 +263,6 @@ autocmd BufWrite *.py :Autoformat
 
 " ClangFormat {{{
 let g:clang_format#code_style = "google"
-
-" Run ClangFormat automatically for cpp files
 autocmd FileType cpp ClangFormatAutoEnable
 " }}}
 
@@ -287,7 +285,6 @@ au Filetype * let &l:softtabstop = s:tabwidth
 " Automatically remove whitespace from all files on save
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces#Automatically_removing_all_trailing_whitespace
 autocmd BufWritePre * :%s/\s\+$//e
-autocmd FileType cpp ClangFormatAutoEnable
 " }}}
 
 " Misc {{{
