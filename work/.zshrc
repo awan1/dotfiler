@@ -134,20 +134,14 @@ fi
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-# Added by /home/adrianwan/Downloads/gerrit/bootstrap/shared/tools/dev/configure/setup.sh
-# 20180606.173310
-# Copied from .bashrc
-eval "$("${HOME}/bin/ssh_agent.sh")"
-if [[ -r $HOME/verb/tools/envsetup-zsh.sh ]]; then
+#if [[ -r $HOME/verb/tools/envsetup-zsh.sh ]]; then
     # /bin/bash source $HOME/verb/tools/envsetup.sh
-    source $HOME/verb/tools/envsetup-zsh.sh
-fi
+#    source $HOME/verb/tools/envsetup-zsh.sh
+#fi
 
 export VERB_HOME="${HOME}/verb"
-export PATH=$PATH:${VERB_HOME}/usr/bin:/usr/local/bin
-
+export PATH=$PATH:${VERB_HOME}/usr/bin:${HOME}/.local/bin:/usr/local/bin
 # Virtualenvwrapper
 export WORKON_HOME="${HOME}/virtualenvs"
 source ${HOME}/.local/bin/virtualenvwrapper.sh
-# Imatest
-alias srcimatest='export LD_LIBRARY_PATH=/usr/local/Imatest/v5.2.0/IT/bin:/usr/local/Imatest/v5.2.0/IT/libs/library/cpp:/usr/local/MATLAB/MATLAB_Runtime/v96/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v96/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v96/sys/os/glnxa64; export MCR_CACHE_ROOT=/var/lib/imatest/mcr_cache; export MCR_CACHE_SIZE=900000000'
+alias srcimatest="export LD_LIBRARY_PATH=/usr/local/Imatest/v5.1.33/IT/bin:/usr/local/Imatest/v5.1.33/IT/libs/library/cpp:/usr/local/MATLAB/MATLAB_Runtime/v93/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v93/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v93/sys/os/glnxa64"

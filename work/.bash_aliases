@@ -126,6 +126,8 @@ alias gaacs='gaac && gps'
 # Compound git commands
 # Make the given branch point to current commit and check the branch out
 function gbf () { gb -f "$@" && gch "$@" }
+# Update master
+alias gmaster='gch master && gpl && gch -'
 
 # Docker
 alias d='docker'
@@ -135,4 +137,4 @@ alias swd='~/verb/tools/dev/syssw_docker/syssw_docker.sh'
 
 # Other work
 alias gpsg='gps gerrit HEAD:refs/for/master'
-alias gpsd='gps gerrit HEAD:refs/drafts/master'
+alias gpsd='gps gerrit HEAD:refs/for/master%wip'
