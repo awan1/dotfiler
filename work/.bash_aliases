@@ -7,9 +7,8 @@ function ca () { cd "$@"; la; }
 function cl () { cd "$@"; ll; }
 
 # Directories
-alias cv="c ~/verb"
-alias cve="c ~/verb/export/robot_logs"
-alias cvv="c ~/verb/verb"
+alias co="c ~/onduo"
+alias cD="c ~/Downloads"
 
 # Programs
 alias v="vim -p"
@@ -129,12 +128,9 @@ function gbf () { gb -f "$@" && gch "$@" }
 # Update master
 alias gmaster='gch master && gpl && gch -'
 
-# Docker
-alias d='docker'
-alias di='d images'
-# syssw docker script
-alias swd='~/verb/tools/dev/syssw_docker/syssw_docker.sh'
-
-# Other work
-alias gpsg='gps gerrit HEAD:refs/for/master'
-alias gpsd='gps gerrit HEAD:refs/for/master%wip'
+# g3
+alias pa='prodaccess'
+# Crow (Android emulator)
+fpath=(/google/bin/releases/mobile-devx-platform/crow $fpath)
+compdef _crow /google/bin/releases/mobile-devx-platform/crow/crow.par
+alias crow=/google/bin/releases/mobile-devx-platform/crow/crow.par

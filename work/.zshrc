@@ -142,6 +142,5 @@ export EDITOR="$VISUAL"
 export VERB_HOME="${HOME}/verb"
 export PATH=$PATH:${VERB_HOME}/usr/bin:${HOME}/.local/bin:/usr/local/bin
 # Virtualenvwrapper
-export WORKON_HOME="${HOME}/virtualenvs"
-source ${HOME}/.local/bin/virtualenvwrapper.sh
-alias srcimatest="export LD_LIBRARY_PATH=/usr/local/Imatest/v5.1.33/IT/bin:/usr/local/Imatest/v5.1.33/IT/libs/library/cpp:/usr/local/MATLAB/MATLAB_Runtime/v93/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v93/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v93/sys/os/glnxa64"
+#export WORKON_HOME="${HOME}/virtualenvs"
+#source ${HOME}/.local/bin/virtualenvwrapper.sh
