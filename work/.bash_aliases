@@ -43,10 +43,8 @@ alias dt="dazel test '...:*'"
 alias dbt="db && dt"
 
 # clang-format
-alias cft="${VERB_HOME}/shared/build_rules/clang_format_test/clang_format_test.sh"
-# alias cfvi="${VERB_HOME}/usr/bin/clang-format-verb"
-# For some reason it's on path?
-alias cfvi="clang-format-verb -i"
+# From danielhira. Need to use the clang-format in docker.
+alias cf="dbash clang-format-verb 3.8 -i *.cc *.h"
 
 # Repo
 alias r="repo"
@@ -122,6 +120,7 @@ alias gacm='gau && gcm'
 alias gacs='gac && gps'
 alias gaac='gaa && gc'
 alias gaacs='gaac && gps'
+
 # Compound git commands
 # Make the given branch point to current commit and check the branch out
 function gbf () { gb -f "$@" && gch "$@" }
