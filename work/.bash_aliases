@@ -135,3 +135,7 @@ compdef _crow /google/bin/releases/mobile-devx-platform/crow/crow.par
 alias crow=/google/bin/releases/mobile-devx-platform/crow/crow.par
 # ACID
 alias acid=/google/data/ro/teams/mobile_eng_prod/acid/acid
+
+# medkit / gerrit
+alias gpsg='gps origin HEAD:refs/for/master'
+
