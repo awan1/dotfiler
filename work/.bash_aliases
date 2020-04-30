@@ -135,7 +135,9 @@ compdef _crow /google/bin/releases/mobile-devx-platform/crow/crow.par
 alias crow=/google/bin/releases/mobile-devx-platform/crow/crow.par
 # ACID
 alias acid=/google/data/ro/teams/mobile_eng_prod/acid/acid
-source ~/.acid-completion
+if [[ -r $HOME/.acid-completion ]]; then
+    source ~/.acid-completion
+fi
 
 # medkit / gerrit
 alias gpsg='gps origin HEAD:refs/for/master'

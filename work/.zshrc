@@ -146,4 +146,6 @@ export PATH=$PATH:${VERB_HOME}/usr/bin:${HOME}/.local/bin:/usr/local/bin
 #source ${HOME}/.local/bin/virtualenvwrapper.sh
 
 # enable programmable completion features
-source /etc/bash_completion.d/g4d
+if [ -f /etc/bash_completion.d/g4d ]; then
+    source /etc/bash_completion.d/g4d
+fi
