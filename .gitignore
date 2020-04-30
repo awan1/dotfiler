@@ -4,3 +4,5 @@
 !/README.md
 !/CHANGELOG.md
 !/.ignored_files
+.created-links
+work/.bash_aliases-nosync
