@@ -144,3 +144,6 @@ export PATH=$PATH:${VERB_HOME}/usr/bin:${HOME}/.local/bin:/usr/local/bin
 # Virtualenvwrapper
 #export WORKON_HOME="${HOME}/virtualenvs"
 #source ${HOME}/.local/bin/virtualenvwrapper.sh
+
+# enable programmable completion features
+source /etc/bash_completion.d/g4d
