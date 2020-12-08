@@ -75,7 +75,7 @@ alias glab="gla --branches --graph"
 alias gps='g push'
 alias gpsf='g push --force'
 alias gpso='gps origin'
-alias gpsuo='gps -u origin'  # For setting upstream branch on origin
+alias gpsuo='gps -u origin HEAD'  # For setting upstream branch on origin
 alias gc='g commit'
 alias gcm='gc -m'
 alias gcl='g clone --recursive'  # For getting submodules
@@ -91,7 +91,6 @@ alias gbD='gb -D'
 function gbdps () { gbd "$@"; gpso :"$@"; }
 alias gch='g checkout'
 alias gchb='gch -b'
-function gchbpsuo () { gchb "$@"; gpsuo "$@"; }
 alias gd='g diff --submodule'
 function gds () { gd "$@" --stat; }
 alias gdh='gd HEAD~1'
@@ -105,6 +104,7 @@ alias gstp='gst pop'
 alias gstl='gst list'
 alias gsub='g submodule'
 alias gsubu='gsub update'
+alias gsubur='gsubu --remote'
 alias gpl='g pull --ff-only && gsubu'
 alias gr='g reset'
 alias grb='g rebase'
