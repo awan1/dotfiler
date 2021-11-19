@@ -1,10 +1,6 @@
 Setting up new Linux env:
 
-- Clone gnome-terminal-colors for zenburn colors:
-
-      git clone git@github.com:gnumoksha/gnome-terminal-colors.git
-
-  then run the `install.sh` script.
+- Set up colors using https://github.com/Mayccoll/Gogh
 - Install zsh:
 
       sudo apt-get install zsh
