@@ -12,6 +12,7 @@ Setting up new Linux env:
 
   (If it complains that "user does not exist in /etc/passwd", ignore it - we'll
   set the default command later which will automatically run zsh)
+- Set up GitHub SSH key: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent  
 - Clone dotfiles repo:
 
       git clone git@github.com:awan1/dotfiler.git ~/.dotfiles
