@@ -8,7 +8,9 @@ Setting up new MacOS env:
 - Follow remaining instructions in `new-terminal-setup.md`, using `brew` instead of
   `apt-get` as necessary
 
-- When installing `powerline-status`, following the instructions about the error
-  of "externally managed environment", do `brew install pipx` then use `pipx` to
-  install powerline?
+- When installing `powerline-status`, need to ignore instructions about
+  "externally managed environment" and do this:
+
+      pip3 install --break-system-packages --user powerline-status
+
 - Needed to adjust `.tmux.conf` to point to correct path of zsh on MacOS

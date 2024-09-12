@@ -134,13 +134,6 @@ fi
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-#if [[ -r $HOME/verb/tools/envsetup-zsh.sh ]]; then
-    # /bin/bash source $HOME/verb/tools/envsetup.sh
-#    source $HOME/verb/tools/envsetup-zsh.sh
-#fi
-
-export VERB_HOME="${HOME}/verb"
-export PATH=$PATH:${VERB_HOME}/usr/bin:${HOME}/.local/bin:/usr/local/bin
 # Virtualenvwrapper
 #export WORKON_HOME="${HOME}/virtualenvs"
 #source ${HOME}/.local/bin/virtualenvwrapper.sh
@@ -149,3 +142,10 @@ export PATH=$PATH:${VERB_HOME}/usr/bin:${HOME}/.local/bin:/usr/local/bin
 if [ -f /etc/bash_completion.d/g4d ]; then
     source /etc/bash_completion.d/g4d
 fi
+
+# Flutter
+export PATH=${HOME}/dev/flutter/bin:$PATH
+
+# For libs installed with pipx?
+# Maybe I also want /usr/local/bin ?
+export PATH=${HOME}/.local/bin:$PATH
