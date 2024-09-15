@@ -26,19 +26,19 @@ BULLETTRAIN_PROMPT_ORDER=(
     custom
 #   context
     dir
-    screen
-    perl
-    ruby
+#   screen
+#   perl
+#   ruby
     virtualenv
-    nvm
-    aws
-    go
-    rust
-    elixir
+#   nvm
+#   aws
+#   go
+#   rust
+#   elixir
     git
-    hg
+#   hg
 #   cmd_exec_time
-  )
+)
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -70,7 +70,7 @@ CASE_SENSITIVE="true"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -89,10 +89,10 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git-noalias
-)
+plugins=()
 
+# Necessary for git prompt: https://github.com/ohmyzsh/ohmyzsh/issues/12328#issuecomment-2043492331
+zstyle ':omz:alpha:lib:git' async-prompt no
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -149,3 +149,14 @@ export PATH=${HOME}/dev/flutter/bin:$PATH
 # For libs installed with pipx?
 # Maybe I also want /usr/local/bin ?
 export PATH=${HOME}/.local/bin:$PATH
+
+# Android
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+
+# Ruby
+if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
+  export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+  export PATH=`gem environment gemdir`/bin:$PATH
+fi
+
