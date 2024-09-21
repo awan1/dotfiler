@@ -129,24 +129,6 @@ alias gmaster='gch master && gpl && gch -'
 # Delete local branches that have been deleted on remote
 function gprune () { git fetch --all -p; git branch -vv | awk '{ if ($4 == "gone]") print $1 }' | xargs -n 1 git branch -D }
 
-# g3
-alias pa='prodaccess'
-# Crow (Android emulator)
-fpath=(/google/bin/releases/mobile-devx-platform/crow $fpath)
-compdef _crow /google/bin/releases/mobile-devx-platform/crow/crow.par
-alias crow=/google/bin/releases/mobile-devx-platform/crow/crow.par
-# ACID
-alias acid=/google/data/ro/teams/mobile_eng_prod/acid/acid
-if [[ -r $HOME/.acid-completion ]]; then
-    source ~/.acid-completion
-fi
-
-# medkit / gerrit
-alias gpsg='gps origin HEAD:refs/for/master'
-
-# g4
-alias g4u='g4 upload'
-
 # Source other stuff
 if [[ -r $HOME/.bash_aliases-nosync ]]; then
     source $HOME/.bash_aliases-nosync
