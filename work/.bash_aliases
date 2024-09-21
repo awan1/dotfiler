@@ -12,7 +12,9 @@ alias cD="c ~/Downloads"
 
 # Programs
 alias v="vim -p"
-alias tm="tmux"
+alias nv="nvim"
+# Use nvim for everything
+alias vim="nv"
 
 # CLI
 alias cpr="cp -R"

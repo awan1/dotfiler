@@ -5,6 +5,11 @@ Setting up new Linux env:
 
       sudo apt-get install zsh
 
+- Install oh-my-zsh. Do this first since dotfiles repo will overwrite .zsh
+  stuff:
+      sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  (If it complains that "user does not exist in /etc/passwd", ignore it - we'll
+  set the default command later which will automatically run zsh)
 - Set up GitHub SSH key: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 - Clone dotfiles repo:
 

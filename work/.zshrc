@@ -2,6 +2,14 @@
 autoload -U promptinit; promptinit
 prompt pure
 
+# oh-my-zsh
+# oh-my-zsh is useful even without the themes for e.g. making ls show
+# colors nicely
+export ZSH="$HOME/.oh-my-zsh"
+CASE_SENSITIVE="true"
+COMPLETION_WAITING_DOTS="true"
+source $ZSH/oh-my-zsh.sh
+
 alias src="source ~/.zshrc"
 export TERM="xterm-256color"
 if [ -f ~/.bash_aliases ]; then

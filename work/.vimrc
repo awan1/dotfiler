@@ -36,7 +36,7 @@ execute pathogen#helptags()
 " Do these early {{{
 set t_Co=256  " for better color emulation
 set background=dark " for color of comments
-colorscheme zenburn
+colorscheme catppuccin_mocha
 syntax on
 syntax enable
 "}}}
