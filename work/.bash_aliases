@@ -128,6 +128,8 @@ alias gaacs='gaac && gps'
 function gbf () { gb -f "$@" && gch "$@" }
 # Update master
 alias gmaster='gch master && gpl && gch -'
+# Update main
+alias gmain='gch main && gpl && gch -'
 # Delete local branches that have been deleted on remote
 function gprune () { git fetch --all -p; git branch -vv | awk '{ if ($4 == "gone]") print $1 }' | xargs -n 1 git branch -D }
 
